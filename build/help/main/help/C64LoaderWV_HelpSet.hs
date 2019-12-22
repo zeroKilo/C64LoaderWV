@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE helpset PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 2.0//EN" "http://java.sun.com/products/javahelp/helpset_2_0.dtd">
 
-<!-- HelpSet auto-generated on Fri Oct 18 19:18:27 CEST 2019 -->
+<!-- HelpSet auto-generated on Sun Dec 22 14:08:53 CET 2019 -->
 <helpset version="2.0">
 	<title>C64LoaderWV HelpSet</title>
 	<maps>
