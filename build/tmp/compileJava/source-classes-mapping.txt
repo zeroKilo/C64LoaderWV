@@ -1,8 +1,0 @@
-c64loaderwv/C64LoaderWVLoader.java
- c64loaderwv.C64LoaderWVLoader
-c64loaderwv/BasicLine.java
- c64loaderwv.BasicLine
- c64loaderwv.BasicLine$TokenType
-c64loaderwv/D64Image.java
- c64loaderwv.D64Image
- c64loaderwv.D64Image$D64Entry
