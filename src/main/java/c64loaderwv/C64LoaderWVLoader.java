@@ -71,10 +71,9 @@ public class C64LoaderWVLoader extends AbstractLibrarySupportLoader {
 		return loadSpecs;
 	}
 
-	@Override
 	protected void load(ByteProvider provider, LoadSpec loadSpec, List<Option> options,
 			Program program, TaskMonitor monitor, MessageLog log)
-			throws CancelledException, IOException {
+			throws CancelledException {
 		BinaryReader br = new BinaryReader(provider, true);
 		int idx = -1;
 		for(int i = 2; i < options.size(); i++)
@@ -170,8 +169,7 @@ public class C64LoaderWVLoader extends AbstractLibrarySupportLoader {
 	}
 
 	@Override
-	public List<Option> getDefaultOptions(ByteProvider provider, LoadSpec loadSpec,
-			DomainObject domainObject, boolean isLoadIntoProgram) {
+	public List<Option> getDefaultOptions(ByteProvider provider, LoadSpec loadSpec,	DomainObject domainObject, boolean loadIntoProgram, boolean mirrorFsLayout) {
 		List<Option> list = new ArrayList<Option>();
 		list.add(new Option("Use default (0x801) loading address?", false));
 		list.add(new Option("Try decode basic tokens?", true));
@@ -192,5 +190,10 @@ public class C64LoaderWVLoader extends AbstractLibrarySupportLoader {
 		if((boolean)options.get(1).getValue())
 			count--;
 		return count < 2 ? null : "Please select only one program to load!";
+	}
+
+	@Override
+	protected void load(Program program, ImporterSettings settings) throws CancelledException, IOException {
+		this.load(settings.provider(), settings.loadSpec(), settings.options(), program, settings.monitor(), settings.log());		
 	}
 }
